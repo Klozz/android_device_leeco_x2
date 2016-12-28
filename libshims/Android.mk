@@ -14,16 +14,21 @@
 
 LOCAL_PATH := $(call my-dir)
 
+#sensors
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := sensors/sensors.cpp
 LOCAL_SHARED_LIBRARIES := libgui
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE := libshims_sensors
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
 
+#camera
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
@@ -37,7 +42,10 @@ LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := \
     libbinder libcutils libgui libhardware liblog libsync libui libutils
-
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 
