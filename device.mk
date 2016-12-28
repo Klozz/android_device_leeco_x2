@@ -148,7 +148,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
-
     libstlport
 
 # Connectivity Engine support (CNE)
