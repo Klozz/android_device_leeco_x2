@@ -17,12 +17,13 @@ LOCAL_PATH := $(call my-dir)
 #sensors
 include $(CLEAR_VARS)
 
+
 LOCAL_SRC_FILES := sensors/sensors.cpp
+LOCAL_32_BIT_ONLY := true
 LOCAL_SHARED_LIBRARIES := libgui
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_MODULE_PATH := $(TARGET_OUT)/lib
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE := libshims_sensors
 LOCAL_MODULE_TAGS := optional
 
@@ -39,14 +40,13 @@ LOCAL_SRC_FILES := \
     ui/GraphicBuffer.cpp \
     ui/GraphicBufferAllocator.cpp \
     ui/GraphicBufferMapper.cpp
-
+LOCAL_32_BIT_ONLY := true
 LOCAL_SHARED_LIBRARIES := \
     libbinder libcutils libgui libhardware liblog libsync libui libutils
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_MODULE_PATH := $$(TARGET_OUT)/lib/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_32_BIT_ONLY := true
-LOCAL_MODULE := libshim_camera
+LOCAL_MODULE := libshims_camera
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
