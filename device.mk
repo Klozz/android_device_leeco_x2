@@ -142,7 +142,7 @@ PRODUCT_COPY_FILES += \
 
 #Shims
 PRODUCT_PACKAGES += \
-    libshims_camera \
+    libshim_camera \
     libshims_sensors
 
 # Camera

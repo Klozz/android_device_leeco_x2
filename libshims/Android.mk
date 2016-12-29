@@ -36,17 +36,17 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES := \
-    camera/gui/SensorManager.cpp \
-    camera/ui/GraphicBuffer.cpp \
-    camera/ui/GraphicBufferAllocator.cpp \
-    camera/ui/GraphicBufferMapper.cpp
+    gui/SensorManager.cpp \
+    ui/GraphicBuffer.cpp \
+    ui/GraphicBufferAllocator.cpp \
+    ui/GraphicBufferMapper.cpp
 LOCAL_32_BIT_ONLY := true
 LOCAL_SHARED_LIBRARIES := \
     libbinder libcutils libgui libhardware liblog libsync libui libutils
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE := libshims_camera
+LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
